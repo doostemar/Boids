@@ -1,0 +1,30 @@
+boids
+
+current issues:
+-collision avoidance works, but there's oscillation from alignment, coherence, and separation
+-collision avoidance probably should be prioritized, some boids escape the cage
+-coherence won't work correctly without flock functionality because boids need to access the location of all the other boids, so an owner class, flock should be implemented
+-performance is quite bad at only 100 boids. this might change when you implement flock and remove the sphere perception / overlap functions
+
+plan for features:
+-cage spawning? 
+-maybe you can set your parameters before executing, then do new simulations with different parameters (your simulation should at the very least work well under a variety of parameters, not one goldilocks setup that is the least buggy)
+-some kind of hud that tracks things
+-spawning boids with the keyboard or maybe changing parameters on the fly during execution, maybe even removing forces entirely to see changes in boid behavior
+
+---------------
+
+
+boid
+collision sensor
+boid sensor
+  larger than collision sensor
+  has a blind spot
+separate
+align
+cohere
+
+flock
+ways to set attributes of boids in flock including speed and sensory distance
+can spawn boids?
+keeps list of all boids which boids must be used in a boid's steering algorithm (at least for coherence; alignment and steering work without it apparently, though the current setup is causing performance issues which might be related to the overlap functions being triggered too often)
